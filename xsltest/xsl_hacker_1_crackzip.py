@@ -1,5 +1,7 @@
 #!/usr/bin/python
-
+#--------------------------------------------------
+#                       徐松亮编写
+#--------------------------------------------------
 import sys              # 系统
 import time             # 时间
 import zipfile          # 压缩与解压缩
@@ -7,18 +9,20 @@ import threading        # 多线程
 #--------------------------------------------------	
 StrLine = "--------------------"
 LineNum = 1
-#--------------------------------------------------	
-print (StrLine,LineNum,"-破解解压zip文件")
+time.sleep(5)
+#--------------------------------------------------
+#                       字典破解
+#--------------------------------------------------
+crackzip_str_zipfileName = "xsl_hacker_1_crackzip.zip"
+crackzip_str_passfileName = "xsl_hacker_1_crackzip.txt"
+#
+print (StrLine,LineNum,"-字典破解解压zip文件")
 LineNum+=1
-print ("字典破解")
+
 zipfile_state=0
 timeout=0
 
-def str_setlen(d,l):
-        s=str(d)
-        while len(s) < l:
-                s='0'+s
-        return s
+# fun:extract file
 def extractFile(zFile, password):
     try:
         global zipfile_state 
@@ -27,30 +31,46 @@ def extractFile(zFile, password):
         zipfile_state=1
     except:
         pass
-
-zfile = zipfile.ZipFile('xsl_hacker_1_crackzip.zip')
-passfile=open('xsl_hacker_1_crackzip.txt')
+# open zip file
+zfile = zipfile.ZipFile(crackzip_str_zipfileName)
+# open dictionaries
+passfile=open(crackzip_str_passfileName)
+# read passfile line
 for line in passfile.readlines():
+        # strip \n
         password = line.strip('\n')
+        # run thread extract file
         t = threading.Thread(target=extractFile, args=(zfile, password))
+        # run thread
         t.start()
-
+# waiting finish
 while zipfile_state==0:
         timeout=timeout+1
         if timeout>10:
                 break
         else:
                 time.sleep(1)
-        
+# file close        
 passfile.close()
 zfile.close()
-
+#--------------------------------------------------
+#                       暴力破解
+#--------------------------------------------------
+crackzip_str_zipfile99999Name = "xsl_hacker_1_crackzip99999.zip"
+#
+print (StrLine,LineNum,"-暴力破解解压zip文件")
 print ("5位数字暴力破解(单线程) 包括0-9 00-99 000-999 0000-9999 00000-99999")
-zfile = zipfile.ZipFile('xsl_hacker_1_crackzip99999.zip')
+zfile = zipfile.ZipFile(crackzip_str_zipfile99999Name)
 password=0
 zipfile_state=0;
 ticks_begin = time.time()
 zfile_cmt=0;
+# fun:
+def str_setlen(d,l):
+        s=str(d)
+        while len(s) < l:
+                s='0'+s
+        return s
 for num in range(1,6):
         password=0
         dmax = pow(10,num)-1
