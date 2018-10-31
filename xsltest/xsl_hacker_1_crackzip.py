@@ -9,12 +9,12 @@ import threading        # 多线程
 #--------------------------------------------------	
 StrLine = "--------------------"
 LineNum = 1
-time.sleep(5)
+time.sleep(2)
 #--------------------------------------------------
 #                       字典破解
 #--------------------------------------------------
 crackzip_str_zipfileName = "xsl_hacker_1_crackzip.zip"
-crackzip_str_passfileName = "xsl_hacker_1_crackzip.txt"
+crackzip_str_passfileName = "xsl_hacker_1_crackzip_codebook.txt"
 #
 print (StrLine,LineNum,"-字典破解解压zip文件")
 LineNum+=1
@@ -50,7 +50,7 @@ while zipfile_state==0:
                 break
         else:
                 time.sleep(1)
-# file close        
+# file close
 passfile.close()
 zfile.close()
 #--------------------------------------------------
