@@ -1,16 +1,16 @@
 {
 	"folders": [
 		{
-			"path": "E:\\GitHub\\python\\xsltest\\xsl_hacker_1_crackzip"
+			"path": "..\\xsl_hacker_1_crackzip"
 		},
 		{
-			"path": "E:\\GitHub\\python\\xsltest\\xsl_basic_1_base"
+			"path": "..\\xsl_basic_1_base"
 		},
 		{
-			"path": "E:\\GitHub\\python\\xsltest\\xsl_basic_2_tkinter"
+			"path": "..\\xsl_basic_2_tkinter"
 		},
 		{
-			"path": "E:\\GitHub\\python\\xsltest\\xsl_basic_3_turtle"
+			"path": "..\\xsl_basic_3_turtle"
 		}
 	],
 	"settings": {
