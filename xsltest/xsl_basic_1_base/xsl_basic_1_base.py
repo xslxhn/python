@@ -53,6 +53,7 @@ print ("* 向服务器传送文件")
 print (StrLine,LineNum,"-零散知识点")
 LineNum+=1
 print ("* 类似C语言中的sprintf: 直接用%即可,例如：str1='%02x %02d' % (i,j)")
+print ("* 临时增加系统环境变量，sys.path.append(dir e.g C:\...)")
 #--------------------------------------------------
 print (StrLine,LineNum,"-查看系统信息")
 LineNum+=1
