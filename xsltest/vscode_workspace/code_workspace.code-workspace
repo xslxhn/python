@@ -11,9 +11,13 @@
 		},
 		{
 			"path": "..\\xsl_basic_3_turtle"
+		},
+		{
+			"path": "..\\xsl_hacker_2_ip_to_country_city_asn"
 		}
 	],
 	"settings": {
-		"aliosStudio.sdkPath": "C:\\Users\\Administrator\\.aos\\AliOS-Things"
+		"aliosStudio.sdkPath": "C:\\Users\\Administrator\\.aos\\AliOS-Things",
+		"python.autoComplete.extraPaths": ["${workspaceRoot}"]
 	}
 }
